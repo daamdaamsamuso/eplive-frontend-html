@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <!-- 퀴즈 시작전 대기화면 -->
+    <div id="dv_waiting" th:fragment="waiting_bind" >
+        <div class="body_waiting">
+            <div class="waiting_bg" id="waiting_bg" >
+                <div class="waiting" id="waiting_bg_waiting">
+                    <div class="player_area">
+                        <div class="header_top" id="waiting_header_top" >
+                            <div class="header_txt" th:utext="#{top_timer_title01}">데이터가없습니다</div>
+                            <div class="header_time" id="p_timer_countdown"></div>
+                        </div>
+                        <div class="player_img" id="dv_player_img">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/waiting/main_title.png" alt="">
+                        </div>
+                        <div class="player_mov" id="dv_player_mov">
+                            <div id="player"></div>
+                            <div class="mute_icon" id="dv_mute_icon">
+                                <img class="mute_icon_img"  src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/mute_icon.png" alt="">
+                                <p class="mute_icon_p" th:utext="#{txt_mute}">탭하여음소거해제</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text_area">
+                        <div class="notice_title Noto">
+                            <p th:utext="#{waiting_title}">데이터가 없습니다</p></div>
+                        <div class="notice_meta">
+                            <table>
+                                <tr>
+                                    <th>1.</th>
+                                    <td th:utext="#{waiting_list01}">데이터가없습니다</td>
+                                </tr>
+                                <tr>
+                                    <th>2.</th>
+                                    <td th:utext="#{waiting_list02}">데이터가없습니다</td>
+                                </tr>
+                                <tr>
+                                    <th>3.</th>
+                                    <td th:utext="#{waiting_list03}">데이터가없습니다</td>
+                                </tr>
+                                <tr>
+                                    <th>4.</th>
+                                    <td th:utext="#{waiting_list04}">데이터가없습니다</td>
+                                </tr>
+                                <tr>
+                                    <th>5.</th>
+                                    <td th:utext="#{waiting_list05}">데이터가없습니다</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
