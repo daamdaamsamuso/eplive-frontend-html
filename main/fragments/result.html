@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <!-- 퀴즈 종료 결과화면 -->
+    <div id="dv_result" th:fragment="result_bind">
+        <div class="body_result">
+            <div class="result" >
+                <div class="main_area">
+                    <img class="img_item" id="dv_img_item" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/result_header_img_title.png" alt="">
+                    <div class="score_area">
+                        <div class="header_title"> <p th:utext="#{result_txt}">최종점수</p></div>
+                        <div class="header_meta">
+                            <img id="score_my" class="score_10" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/result_score_0.png" alt="">
+                            <img class="score_dash" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/result_score_dash.png" alt="">
+                            <img class="score_10" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/result_score_10.png" alt="">
+                        </div>
+                    </div>
+                    <div class="login_area" id="dv_login_area">
+                        <div class="login_group" id ="dv_login_group">
+                            <img class="img_mask" id="dv_img_mask" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_mask.png" alt=""></img>
+                            <div id="dv_input_member_bg" class="input_member_bg">
+                                <div class="input_member">
+                                    <div class="schedule_next">
+                                        <div class="txt_title">
+                                            <p class="dream" id="p_score_txt_pass" th:utext="#{result_title}">데이터가 없습니다</p>
+                                            <p class="dream" id="p_score_txt_fail" th:utext="#{result_score}">데이터가없습니다</p>
+                                        </div>
+                                        <div class="txt_meta">
+                                            <p id="p_score_txt_meta_pass" th:utext="#{result_sub}">데이터가 없습니다</p>
+                                            <p id="p_score_txt_meta_fail" th:utext="#{result_score_sub}">데이터가 없습니다</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="schedule_btn" >
+                                <button id="btn_community_link_area" onclick="gtag('event', '다음회차정보', {'event_category' : '퀴즈결과', 'event_label' : '다음회차정보', 'event_callback' : onInfoSchedule()});" th:utext="#{txt_schedule}">다음 회차 정보<img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/community_link_area_icon.png" alt=""> </button>
+                                <!--<button id="btn_community_link_area" onclick="onInfoSchedule()" th:utext="#{txt_schedule}">다음 회차 정보<img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/qdm/community_link_area_icon.png" alt=""> </button>-->
+                            </div>
+                        </div>
+                        <div class="festival_link_area" >
+                            <button id="btn_festival_link_area" onclick="gtag('event', '온라인생방송보기', {'event_category' : '퀴즈결과', 'event_label' : '온라인생방송보기', 'event_callback' : goToYoutubeLiveUrl()});" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button>
+                            <!-- <button id="btn_festival_link_area" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

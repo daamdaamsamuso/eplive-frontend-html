@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body id="body_main">
+<h3>Member 관리</h3>
+<div>
+    <div>
+        <button type="button" onclick="selectMemberAll()"> Select Member ALL</button>
+        <span></span>
+        <button type="button" style="background-color: red; color: white" onclick="deleteMemberAll()"> Delete Member ALL</button>
+    </div>
+    <span/>
+    <div>
+        <textarea id="txt_resultmember"></textarea>
+    </div>
+</div>
+<h3>Submission 관리</h3>
+<div>
+    <div>
+        <button type="button" onclick="selectSubmissionAll()"> Select Submission ALL</button>
+        <span/>
+        <button type="button" style="background-color: red; color: white" onclick="deleteSubmissionAll()"> Delete Submission ALL</button>
+    </div>
+    <span/>
+    <div>
+        <button type="button" onclick="SubmissionfindAllWithMember()"> SubmissionfindAllWithMember</button>
+    </div>
+    <span/>
+    <div>
+        <textarea id="txt_resultsubmission"></textarea>
+    </div>
+</div>
+
+
+<h3>Server System 관리</h3>
+<div>
+    <div>
+        <button type="button" onclick="setServerSystem(0)"> Set Server System 0 (정상)</button>
+        <span/>
+        <button type="button" style="background-color: red; color: white" onclick="setServerSystem(1)"> Set Server System 1 (점검)</button>
+    </div>
+</div>
+
+<h3>결과 테이블 정리</h3>
+<div>
+    <div>
+        <div>
+            <button type="button" style="background-color: yellowgreen; color: black" onclick="collectQuizScore(true)">Collect Quiz Score (결과 정리 / 시간 체크 o)</button>
+            <span/>
+            <button type="button" style="background-color: yellowgreen; color: black"  onclick="collectQuizScore(false)">Collect Quiz Score (결과 정리 / 시간체크 x)</button>
+        </div>
+        <div>
+            <button type="button" onclick="selectQuizScoreAll()">select Quiz Score ALL (정리된 결과 조회)</button>
+            <span/>
+            <button type="button" onclick="selectQuizScoreDedup()">select Quiz Score Deduplication (중복제거된 결과 조회)</button>
+            <span/>
+            <button type="button" style="background-color: red; color: white" onclick="deleteQuizScoreAll()">Delete QuizScore ALL (결과 전체 삭제)</button>
+        </div>
+    </div>
+    <span/>
+    <div>
+        <textarea id="txt_resultquizscore"></textarea>
+    </div>
+</div>
+
+<!--<script type="text/javascript" th:src="@{/js/common/encrypt_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/debug_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/ssms/main.js}"></script>-->
+
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ QA ( none CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script type="text/javascript" th:src="@{/live/js/common/encrypt_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/debug_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/ssms/main.js}"></script>-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/encrypt_helper.nan.js"></script>-->
+<!--<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/debug_helper.js"></script>-->
+<!--<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/ssms/main.js"></script>-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LIVE ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/encrypt_helper.nan.js"></script>
+<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/debug_helper.js"></script>
+<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/ssms/main.js"></script>
+
+</body>
+</html>

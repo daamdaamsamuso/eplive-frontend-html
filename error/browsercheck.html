@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>pcerr</title>
+<!--    <link rel="stylesheet" th:href="@{/css/common/epiclive.css}"/>-->
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/epiclive.css" rel="stylesheet"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no , viewport-fit=cover" >
+    <meta name="apple-mobile-web-app-capable" content="no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div id="dv_NotSupported" >
+        <div class="NotSupported_browser">
+            <img id="img_browser" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg4.png" alt="">
+            <div class="Oops_textbox">
+                <div class="Oops_title"  th:utext="#{browser_error}">에픽 라이브 진행에<br>최적화된 브라우저로 접속해 주세요</div>
+                <div class="Oops_subtitle">
+                    <div class="popup_table_error">
+                        <table>
+                            <tr>
+                                <th style="padding-bottom: 8px" th:utext="#{aos}"></th>
+                                <td style="padding-bottom: 8px" th:utext="#{aos_list}"></td>
+                            </tr>
+                            <tr>
+                                <th th:utext="#{ios}"></th>
+                                <td th:utext="#{ios_list}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ QA ( no CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<script type="text/javascript" th:src="@{/live/js/login/browsercheck.js}"></script>
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/browsercheck.js"></script>-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ LIVE ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script  type="text/javascript" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/browsercheck.js"></script>-->
+
+</html>

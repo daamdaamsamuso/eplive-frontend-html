@@ -1,0 +1,540 @@
+<!-- 로그인 페이지-->
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RE8Z14VKLL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RE8Z14VKLL');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no , viewport-fit=cover" >
+    <meta name="apple-mobile-web-app-capable" content="no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ none CDN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <!--        <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">-->
+    <!--        <link rel="stylesheet" th:href="@{/css/common/epiclive.css}"/>-->
+    <!--        <link rel="stylesheet" th:href="@{/css/common/new_popup.css}"/>-->
+
+    <!--        <link rel="stylesheet" th:href="@{/css/login/login.css}"/>-->
+    <!--        <link rel="stylesheet" th:href="@{/css/login/display.css}"/>-->
+    <!--        <link rel="stylesheet" th:href="@{/css/common/popup_display.css}"/>-->
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 개발 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/font/stylesheet.css" rel="stylesheet" type="text/css" charset="utf-8"/>-->
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/epiclive.css" rel="stylesheet"/>
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/new_popup.css" rel="stylesheet"/>
+
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/login/login.css" rel="stylesheet"/>
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/login/display.css" rel="stylesheet"/>
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/popup_display.css" rel="stylesheet"/>
+
+
+    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 라이브 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!--    <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">-->
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/font/stylesheet.css" rel="stylesheet" type="text/css" charset="utf-8"/>-->
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/epiclive.css" rel="stylesheet"/>-->
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/new_popup.css" rel="stylesheet"/>-->
+
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/login/login.css" rel="stylesheet"/>-->
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/login/display.css" rel="stylesheet"/>-->
+    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/popup_display.css" rel="stylesheet"/>-->
+    <title>EPIC LIVE</title>
+</head>
+
+<body id="body_main" >
+<span id="div_is_end" style="display: none" th:text="${isEnd}"/>
+<div class="app" >
+    <div id="dv_Supported">
+        <!-- 정보입력 페이지 -->
+        <div id="dv_joinshow">
+            <div class="joinshow">
+                <div class="main_area">
+                    <img id="main_area_img_bg" class="img_bg" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_01.png" alt="">
+                    <img class="img_item" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_02.png" alt="">
+                    <img id="main_area_img_title"  class="img_title" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_03.png" alt="">
+                    <div class="header_top" id="dv_top_timer">
+                        <div class="header_txt  Noto" id="header_timer" >
+                            <p id="p_title_countdown" th:utext="#{top_timer_title01}" style="display:none">생방송까지 남은시간</p>
+                            <p id="p_title_play" th:utext="#{top_timer_title02}" style="display:none" >생방송까지 남은시간</p>
+                        </div>
+                        <div class="header_time Noto" id="p_timer_countdown">--:--</div>
+                    </div>
+                    <div class="login_area" id="dv_login_area">
+                        <div class="login_group">
+                            <img class="img_mask" id="img_mask" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_mask.png" alt="">
+                            <div id="dv_input_member_bg">
+                                <!-- 퀴즈쇼 참여가능 -->
+                                <div class="open">
+                                    <div class="input_member_bg">
+                                        <div class="input_member">
+                                            <div class="txt_title dream" id="dv_open_login_title" th:utext="#{login_title_open}">
+                                                퀴즈 참가를 위해<br>
+                                                에픽세븐 계정 정보를 입력하세요
+                                            </div>
+                                            <form id="form_login" th:action="@{/main/login}" th:object="${memberForm}" method="post" onsubmit="loginFormSubmit()">
+                                                <fieldset>
+                                                    <div class="input_group01">
+                                                        <div class="input_server_name">
+                                                            <select name="server_name" id="select_server_name" th:field="*{server_name}">
+                                                                <option value="kr" th:utext="#{txt_server_kr}">한국</option>
+                                                                <option value="asia" th:utext="#{txt_server_asia}">아시아</option>
+                                                                <option value="global" th:utext="#{txt_server_global}">글 로벌</option>
+                                                                <option value="eu" th:utext="#{txt_server_eu}">유럽</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input_name">
+                                                            <input type="text" name="input_name" id="input_name" th:field="*{nick_name}" th:placeholder="#{txt_name}" placeholder="닉네임" maxlength="12" onfocus="onFocusInput()" onblur="onBlurInput()" onkeypress="onNameCheck()" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="input_group02" >
+                                                        <div class="input_num">
+                                                            <input type="number" inputmode="numeric" pattern="[0-9]*" name="input_number" id="input_number" onfocus="onFocusInput()" onblur="onBlurInput()" th:field="*{member_no}" th:placeholder="#{txt_number}" placeholder="회원번호" onkeydown="checkOnKeyDown(this)" onkeyup="checkOnKeyUp(this,19)" >
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                            <div class="helper" >
+                                                <p id="dv_input_helper" onclick="gtag('event', '정보확인방법', {'event_category' : '참가정보입력', 'event_label' : '정보확인방법', 'event_callback' : onHelperLogin()});" th:utext="#{login_title_helper}">닉네임, 회원번호 확인방법</p>
+                                                <!-- <p id="dv_input_helper" onclick="onHelperLogin()" th:utext="#{login_title_helper}">닉네임, 회원번호 확인방법</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 퀴즈쇼 참여불가 -->
+                                <div class="closed">
+                                    <div class="input_member">
+                                        <div class="schedule_next">
+                                            <div class="txt_area_closed">
+                                                <div class="txt_title dream" th:utext="#{exit_title}">
+                                                    언어데이터가없습니다.<br>
+                                                </div>
+                                                <div class="txt_subtitle" th:utext="#{exit_sub}" >언어데이터가 없습니다.
+                                                </div>
+                                            </div>
+                                            <div class="txt_table">
+                                                <table>
+                                                    <!--                                                    <tr>-->
+                                                    <!--                                                        <th th:utext="#{schedule_sub01}">다음 이벤트</th>-->
+                                                    <!--                                                        <td th:utext="#{schedule_sub01_1}">2021년 5월 2일</td>-->
+                                                    <!--                                                    </tr>-->
+                                                    <tr>
+                                                        <th th:utext="#{schedule_sub02}">마지막 이벤트</th>
+                                                        <td th:utext="#{schedule_sub02_1}">2021년 5월 16일</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="schedule_none">
+                                            <div class="txt_title" th:utext="#{schedule_title03}">
+                                                The 2021 Epic Quiz has come to an end.<br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="open">
+                            <div class="next_btn" >
+                                <button id="btn_validation" onclick="checkValidation_gtag()" th:utext="#{txt_next}">다음</button>
+                                <!--<button id="btn_validation" onclick="checkValidation()" th:utext="#{txt_next}">다음</button>-->
+                            </div>
+                        </div>
+                        <div class="closed">
+                            <div class="next_btn" >
+                                <button onclick="gtag('event', '퀴즈시간아님페스티벌메인으로', {'event_category' : '진행중및종료후접속', 'event_label' : '퀴즈시간아님페스티벌메인으로', 'event_callback' : goToYoutubeLiveUrl()});" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button>
+                                <!-- <button th:utext="#{txt_livestream}">에픽페스티벌 온라인 생방송</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 로그인 오류 팝업-->
+        <div id="dv_login_fail">
+            <div class="popup_area">
+                <div class="popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow_login_fail" >
+                        <div class="top_group">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                        </div>
+                        <div class="fixed_area" id="dv_fixed_area_login_fail">
+                            <div class="popup_title" id="dv_error_empty" th:utext="#{validation_result_title02}">모든 항목을 빠짐 없이 입력해주시기 바랍니다</div>
+                            <div class="popup_title" id="dv_error_all" th:utext="#{validation_result_title01}">닉네임, 회원번호 입력 오류</div>
+                            <div class="popup_title" id="dv_error_name">닉네임 입력 오류</div>
+                            <div class="popup_title" id="dv_error_number">회원번호 입력 오류</div>
+                            <div class="popup_table_error">
+                                <table>
+                                    <tr>
+                                        <th th:utext="#{txt_name}">닉네임</th>
+                                        <td th:utext="#{validation_result_sub01}">공백 없이 최소2자, 최대 12자</td>
+                                    </tr>
+                                    <tr>
+                                        <th th:utext="#{txt_number}">회원번호</th>
+                                        <td th:utext="#{validation_result_sub02}">숫자만 9자리 이상</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="bottom_area" id="dv_bottom_area_login_fail">
+                            <button class="btn_item01" onclick="offErrorLogin()" th:utext="#{txt_close}">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 로그인 정보확인 팝업-->
+        <div id="dv_login_validation">
+            <div class="popup_area">
+                <div class="popup_bg" id="validation_popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow_validation" >
+                        <div class="top_group">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                        </div>
+                        <div class="fixed_area" id="dv_fixed_area_validation">
+                            <div class="popup_title" id="dv_fail_all" th:utext="#{validation_title}">입력한 정보가 맞는지 확인해주세요</div>
+                            <div class="popup_subtitle" th:utext="#{validation_sub}">회원 정보와 일치하지 않을 경우, 보상이 정상적으로 이루어지지 않을 수 있습니다.</div>
+                            <div class="popup_table">
+                                <table>
+                                    <tr>
+                                        <th th:utext="#{txt_server}">서버</th>
+                                        <td id="td_output_server"></td>
+                                    </tr>
+                                    <tr>
+                                        <th th:utext="#{txt_name}">닉네임</th>
+                                        <td id="td_output_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <th th:utext="#{txt_number}">회원번호</th>
+                                        <td id="td_output_number"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="bottom_area_row" id="dv_bottom_area_validation">
+                            <button class="btn_item01" onclick="gtag('event', '입력정보확인_수정', {'event_category' : '입력정보확인', 'event_label' : '입력정보확인_수정', 'event_callback' : clearValidation()});" th:utext="#{txt_clear}">다시 입력</button>
+                            <button class="btn_item02" id="btn_confirm" type="submit" form="form_login" th:utext="#{txt_next}"
+                                    onclick="gtag('event', '입력정보확인_다음', {'event_category' : '입력정보확인', 'event_label' : '입력정보확인_다음'});">다음</button>
+
+                            <!--<button class="btn_item01" onclick="clearValidation()" th:utext="#{txt_clear}">다시 입력</button>button-->
+                            <!--<button class="btn_item02" id="btn_confirm" type="submit" form="form_login" th:utext="#{txt_next}">다음</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 재입장 팝업-->
+        <div id="dv_qdm_exit">
+            <div class="popup_area">
+                <div class="popup_bg" id="qdm_exit_popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow_qdm_exit" >
+                        <div class="top_group">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                        </div>
+                        <div class="fixed_area_short" id="dv_fixed_area_qdm_exit">
+                            <div class="popup_title" th:utext="#{re_enter_title}">
+                                에픽 라이브 퀴즈쇼에서 이탈했습니다</div>
+                            <div class="popup_subtitle" th:utext="#{re_enter_sub}">
+                                닉네임 sp_name안바뀜, 회원번호 sp_number안바뀜로
+                                현재 진행중인 문제부터 계속 참여할 수 있습니다.
+                                다시 입장하시겠습니까?
+                            </div>
+                        </div>
+                        <div class="bottom_area_col" id="dv_bottom_area_qdm_exit">
+                            <button class="btn_item01" onclick="gtag('event', '이탈시_재입장', {'event_category' : '퀴즈쇼이탈', 'event_label' : '이탈시_재입장', 'event_callback' : onReconnectViewOff()});" th:utext="#{re_enter_btn01}">새 회원 정보로 입장</button>
+                            <button class="btn_item02" onclick="gtag('event', '이탈시_새회원정보', {'event_category' : '퀴즈쇼이탈', 'event_label' : '이탈시_새회원정보', 'event_callback' : onPlayPage()});" th:utext="#{re_enter_btn02}">재입장</button>
+
+                            <!-- <button class="btn_item01" onclick="onReconnectViewOff()" th:utext="#{re_enter_btn01}">새 회원 정보로 입장</button> -->
+                            <!-- <button class="btn_item02" onclick="onPlayPage()" th:utext="#{re_enter_btn02}">재입장</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 입력정보 정보 확인 방법 팝업-->
+        <div class="helper" id="dv_popup_helper">
+            <div class="popup_area">
+                <div class="popup_bg" id="helper_popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow" >
+                        <div class="top_group Roboto">
+                            <div class="tab01" onclick="checkInfoName()">
+                                <input id="tab_name" type="radio" name="tabs" checked>
+                                <label for="tab_name" th:utext="#{helper_name}">닉네임 확인하기</label>
+                            </div>
+                            <div class="tab02" onclick="checkInfoID()">
+                                <input id="tab_id" type="radio"  name="tabs">
+                                <label for="tab_id" th:utext="#{helper_number}">회원번호 확인하기</label>
+                            </div>
+                        </div>
+                        <div class="info_area" id="dv_guide_name">
+                            <img  src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/guide_name.PNG" alt="">
+                            <p class="Roboto" th:utext="#{helper_name_info}">에픽세븐 게임실행> 로비 왼쪽 상단에서 확인</p>
+                        </div>
+                        <div class="info_area" id="dv_guide_id">
+                            <img th:src="#{helper_numbers}" alt="">
+                            <p class="Roboto" th:utext="#{helper_number_info}">옵션 > 계정설정 > 회원번호 확인 후 # 을 제외하고 작성해주세요</p>
+                        </div>
+                        <div class="bottom_area" id="dv_bottom_area">
+                            <button class="btn_item01 Noto" onclick="offHelperLogin_gtag()" th:utext="#{txt_close}">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 네트워크 체크 팝업-->
+        <div id="dv_network_checking">
+            <div class="page_area">
+                <!-- 네트워크 체크 -->
+                <div class="popup_title_network">
+                    <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/waitingroom_network_pop_02.png" alt="">
+                    <p th:utext="#{network_title}"> 네트워크 연결 상태를 확인 중입니다</p>
+                </div>
+                <div class="popup_subtitle">
+                    <div class="sk-circle">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dv_network_checking_fail">
+            <div class="popup_area">
+                <div class="popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow_network" >
+                        <div class="top_group">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/waiting/waitingroom_network_pop_01.png" alt="">
+                        </div>
+                        <div class="fixed_area" id="dv_fixed_area_network">
+                            <!-- 네트워크 체크 -->
+                            <div class="dv_checking">
+                                <div class="popup_title_network" th:utext="#{network_title}">
+                                    네트워크 연결 상태를 확인 중입니다
+                                </div>
+                                <div class="popup_subtitle">
+                                    <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/waiting/img_loding.png" alt="">
+                                </div>
+                            </div>
+                            <!-- 네트워크 체크 실패 -->
+                            <div class="dv_fail">
+                                <div class="popup_title" th:utext="#{network_fail_title}">
+                                    네트워크 연결 상태가 불안정합니다
+                                </div>
+                                <div class="popup_subtitle" th:utext="#{network_fail_sub}">
+                                    무선 이동 통신이 원활한 환경에서 <br>
+                                    다시 접속하시기 바랍니다.<br>
+                                    회원 정보 입력 페이지로 이동합니다.<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_area" id="dv_bottom_area_network">
+                            <div class="dv_fail">
+                                <button class="btn_item01" onclick="gtag('event', '네트워크_닫기', {'event_category' : '네트워크체크', 'event_label' : '네트워크_닫기', 'event_callback' : btnNetworkCheckFailed()});" th:utext="#{txt_close}">닫기</button>
+                                <!--<button class="btn_item01" onclick="btnNetworkCheckFailed()" th:utext="#{txt_close}">닫기</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 쿠키체크 팝업 -->
+        <div id="dv_cookie_checking">
+            <div class="popup_area">
+                <div class="popup_bg">
+                    <div class="popup_shadow" id="dv_popup_shadow_cookie" >
+                        <div class="top_group">
+                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                        </div>
+                        <div class="fixed_area" id="dv_fixed_area_cookie">
+                            <div class="popup_title" th:utext="#{cookie_fail_title}">
+                                브라우저에서 쿠키가<br>
+                                비활성화되어 있거나 비밀 모드를<br>
+                                사용 중일 수 있습니다.<br>
+                            </div>
+                            <div class="popup_subtitle" th:utext="#{cookie_fail_sub}">
+                                에픽 라이브에 정상적으로 참여하기 위해<br>
+                                쿠키를 활성화하거나 비밀 모드를 중단한 후<br>
+                                다시 시도해 주세요.<br>
+                            </div>
+                        </div>
+                        <div class="bottom_area" id="dv_bottom_area_cookie">
+                            <button class="btn_item01" onclick="window.location.reload()" th:utext="#{txt_close}">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 화면 지원안함 -->
+    <div id="dv_NotSupported">
+        <div class="NotSupported">
+            <img id="Oops_item_img" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg2.png" alt="">
+            <div class="Oops_textbox">
+                <div class="Oops_title">Oops!</div>
+                <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}"> 에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>
+                    디바이스를 세로로 회전해 주세요.</mark> </div>
+            </div>
+        </div>
+        <div class="NotSupported_large">
+            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg4.png" alt="">
+            <div class="Oops_textbox">
+                <div class="Oops_title">Oops!</div>
+                <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}">에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>디바이스를 세로로 회전해 주세요.</mark> </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="debugger__div" id="dv_debugger">-->
+    <!--    <div>-->
+    <!--        <p class="debugger__p">서버시간:</p>-->
+    <!--        <p id="dv_debugger_vdserver" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p class="debugger__p">퀴즈시간:</p>-->
+    <!--        <p id="dv_debugger_vdquiz" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p class="debugger__p">퀴즈 시작 시간:</p>-->
+    <!--        <p id="dv_debugger_quizst" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p class="debugger__p">퀴즈 종료 시간:</p>-->
+    <!--        <p id="dv_debugger_quizend" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p class="debugger__p">퀴즈 런타임:</p>-->
+    <!--        <p id="dv_debugger_quizrun" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p id="dv_debugger_remaintime" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <p id="dv_debugger_remainEndtime" class="debugger__p"></p>-->
+    <!--    </div>-->
+    <!--    <div><h5 id="div_debug_login" >login:</h5></div>-->
+    <!--    <div><h5 id="div_debug_isEnd" >isEnd:</h5></div>-->
+
+    <!--</div>-->
+
+
+</div>
+
+<div class="test_box" id="dv_Testbox" style="display: none"></div>
+
+<div class="test_alert" id="dv_test_alert" th:utext="#{test_txt_login}"></div>
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ none CDN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<!--<script type="text/javascript" th:src="@{/js/common/browser_navigator_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/debug_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/device_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/time_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/encrypt_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/common/cookie_helper.js}"></script>-->
+<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
+<!--<script type="text/javascript" th:src="@{/js/login/cookie_control.js}"></script>-->
+
+<!--<script type="text/javascript" th:src="@{/js/common/location_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/login/ui.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/login/main.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/login/time_control_helper.js}"></script>-->
+
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST (none CDN) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script type="text/javascript" th:src="@{/test/js/common/browser_navigator_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/common/debug_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/common/device_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/common/time_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/common/encrypt_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/common/cookie_helper.js}"></script>-->
+<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/test/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
+<!--<script type="text/javascript" th:src="@{/test/js/login/cookie_control.js}"></script>-->
+
+<!--<script type="text/javascript" th:src="@{/test/js/common/location_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/login/ui.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/login/main.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/test/js/login/time_control_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/collect.js}"></script>-->
+
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ QA (none CDN) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script type="text/javascript" th:src="@{/live/js/common/browser_navigator_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/debug_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/device_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/time_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/encrypt_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/common/cookie_helper.js}"></script>-->
+<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/live/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
+<!--<script type="text/javascript" th:src="@{/live/js/login/cookie_control.js}"></script>-->
+
+<!--<script type="text/javascript" th:src="@{/live/js/common/location_helper.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/login/ui.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/login/main.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/live/js/login/time_control_helper.js}"></script>-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/browser_navigator_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/debug_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/device_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/time_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/encrypt_helper.nan.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/cookie_helper.nan.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/cookie_control.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/location_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/ui.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/main.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/time_control_helper.js"></script>-->
+
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 개발 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/browser_navigator_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/debug_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/device_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/time_helper.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/encrypt_helper.nan.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/cookie_helper.nan.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/cookie_control.js"></script>-->
+
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/ui.js"></script>-->
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/main.js"></script>-->
+
+<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/time_control_helper.js"></script>-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 라이브 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/browser_navigator_helper.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/debug_helper.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/device_helper.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/time_helper.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/encrypt_helper.nan.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/cookie_helper.nan.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/cookie_control.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/location_helper.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/ui.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/main.js"></script>
+<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/time_control_helper.js"></script>
+</body>

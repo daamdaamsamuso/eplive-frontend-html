@@ -1,0 +1,96 @@
+
+/************************** 다음회차*/
+#dv_info_schedule{
+    /*display: block;*/
+    display: none;
+}
+
+.dv_schedule_2st{
+    /*2회차*/
+    display: block;
+    display: none;
+}
+.dv_schedule_last{
+    /*마지막*/
+    display: block;
+    display: none;
+}
+
+/************************** 재입장*/
+#dv_qdm_exit{
+    display: flex;
+    display: none;
+}
+/************************** 로그인 오류 */
+#dv_login_fail{
+    display: flex;
+    display: none;
+}
+#dv_error_empty{
+    /* 입력하지 않은 정보가 있을때 */
+    display: block;
+    display: none;
+}
+#dv_error_all{
+    /* 입력 정보 둘다 오류 */
+    display: block;
+    display: none;
+}
+#dv_error_name{
+    /* 입력 정보 닉네임 오류 */
+    display: block;
+    display: none;
+}
+#dv_error_number{
+    /* 입력 정보 회원번호 오류 */
+    display: block;
+    display: none;
+}
+
+
+/************************** 네트워크 체크 */
+#dv_network_checking{
+    display: flex;
+    display: none;
+}
+#dv_network_checking_fail
+{
+    display: flex;
+    display: none;
+}
+.dv_checking{
+    /* 네트워크 체크 중 */
+    display: block;
+    display: none;
+}
+.dv_fail{
+    /* 네트워크 체크 실패 */
+    display: block;
+    display: none;
+}
+/************************** 로그인 정보 확인 */
+#dv_login_validation{
+    display: flex;
+    display: none;
+}
+/************************** 쿠키 체크*/
+#dv_cookie_checking{
+    display: block;
+    display: none;
+
+}
+/************************** 입력정보 정보 확인 방법 */
+#dv_popup_helper{
+    display: flex;
+    display: none;
+}
+
+#dv_guide_name {
+    /* 닉네임 */
+    display: block;
+}
+#dv_guide_id{
+    /* 회원번호 */
+    display: none;
+}
+

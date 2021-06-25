@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>pcerr</title>
+<!--        <link rel="stylesheet" th:href="@{/css/common/epiclive.css}"/>-->
+    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/epiclive.css" rel="stylesheet"/>
+
+</head>
+<body>
+<!-- 화면 지원안함 -->
+<div id="dv_NotSupported" style="display: block">
+    <div class="NotSupported_Xlarge">
+        <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg4.png" alt="">
+        <div class="Oops_textbox">
+            <div class="Oops_title">Oops!</div>
+            <div class="Oops_subtitle"> <mark th:utext="#{pc_error}"> 데이터가 없습니다.</mark> </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

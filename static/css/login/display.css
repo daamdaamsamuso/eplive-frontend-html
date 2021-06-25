@@ -1,0 +1,48 @@
+
+/* display */
+#dv_joinshow{
+    display: none;
+}
+.joinshow{
+    display: flex;
+}
+
+.popup_validation{
+    display: none;
+}
+
+.popup_helper{
+    /* 입력정보 확인 방법 */
+    display: none;
+}
+#dv_guide_name {
+    /* 닉네임 */
+    display: block;
+}
+#dv_guide_id{
+    /* 회원번호 */
+    display: none;
+}
+/* display */
+.closed{
+    /* 퀴즈쇼 참여 불가*/
+    display: block;
+    display: none;
+}
+
+.schedule_next {
+    /* 스케줄 표시 */
+    display: none;
+    display: block;
+}
+.schedule_none {
+    /* 스케줄 없음 */
+    display: block;
+    display: none;
+}
+
+.open{
+    /* 퀴즈쇼 참여 가능*/
+    display: none;
+    display: block;
+}

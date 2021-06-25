@@ -1,0 +1,13 @@
+.debugger__p{
+    font-weight: bold;
+    font-size: large;
+}
+.debugger__div{
+    position: fixed;
+    left:0;
+    top:0;
+    width:30%;
+    height: 40vh;
+    background-color: cyan;
+    opacity: 0.5;
+}
