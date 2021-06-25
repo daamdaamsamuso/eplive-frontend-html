@@ -1,6 +1,6 @@
 <!-- 로그인 페이지-->
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html  xmlns:th="http://thymeleaf.org">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RE8Z14VKLL"></script>
     <script>
@@ -22,35 +22,14 @@
 
     <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ none CDN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-    <!--        <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">-->
-    <!--        <link rel="stylesheet" th:href="@{/css/common/epiclive.css}"/>-->
-    <!--        <link rel="stylesheet" th:href="@{/css/common/new_popup.css}"/>-->
+    <link rel="stylesheet" href="/resources/font/stylesheet.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/resources/css/common/epiclive.css"/>
+    <link rel="stylesheet" href="/resources/css/common/new_popup.css"/>
 
-    <!--        <link rel="stylesheet" th:href="@{/css/login/login.css}"/>-->
-    <!--        <link rel="stylesheet" th:href="@{/css/login/display.css}"/>-->
-    <!--        <link rel="stylesheet" th:href="@{/css/common/popup_display.css}"/>-->
-
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 개발 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
-    <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/font/stylesheet.css" rel="stylesheet" type="text/css" charset="utf-8"/>-->
-    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/epiclive.css" rel="stylesheet"/>
-    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/new_popup.css" rel="stylesheet"/>
-
-    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/login/login.css" rel="stylesheet"/>
-    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/login/display.css" rel="stylesheet"/>
-    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/css/common/popup_display.css" rel="stylesheet"/>
-
-
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 라이브 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-    <!--    <link rel="stylesheet" th:href="@{/font/stylesheet.css}" type="text/css" charset="utf-8">-->
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/font/stylesheet.css" rel="stylesheet" type="text/css" charset="utf-8"/>-->
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/epiclive.css" rel="stylesheet"/>-->
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/new_popup.css" rel="stylesheet"/>-->
-
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/login/login.css" rel="stylesheet"/>-->
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/login/display.css" rel="stylesheet"/>-->
-    <!--    <link href="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/css/common/popup_display.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="/resources/css/login/login.css"/>
+    <link rel="stylesheet" href="/resources/css/login/display.css"/>
+    <link rel="stylesheet" href="/resources/css/common/popup_display.css"/>
+ 
     <title>EPIC LIVE</title>
 </head>
 
@@ -62,9 +41,9 @@
         <div id="dv_joinshow">
             <div class="joinshow">
                 <div class="main_area">
-                    <img id="main_area_img_bg" class="img_bg" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_01.png" alt="">
-                    <img class="img_item" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_02.png" alt="">
-                    <img id="main_area_img_title"  class="img_title" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_login_bg_03.png" alt="">
+                    <img id="main_area_img_bg" class="img_bg" src="/resources/img/login/main_login_bg_01.png" alt="">
+                    <img class="img_item" src="/resources/img/login/main_login_bg_02.png" alt="">
+                    <img id="main_area_img_title"  class="img_title" src="/resources/img/login/main_login_bg_03.png" alt="">
                     <div class="header_top" id="dv_top_timer">
                         <div class="header_txt  Noto" id="header_timer" >
                             <p id="p_title_countdown" th:utext="#{top_timer_title01}" style="display:none">생방송까지 남은시간</p>
@@ -74,7 +53,7 @@
                     </div>
                     <div class="login_area" id="dv_login_area">
                         <div class="login_group">
-                            <img class="img_mask" id="img_mask" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/main_mask.png" alt="">
+                            <img class="img_mask" id="img_mask" src="/resources/img/login/main_mask.png" alt="">
                             <div id="dv_input_member_bg">
                                 <!-- 퀴즈쇼 참여가능 -->
                                 <div class="open">
@@ -169,7 +148,7 @@
                 <div class="popup_bg">
                     <div class="popup_shadow" id="dv_popup_shadow_login_fail" >
                         <div class="top_group">
-                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                            <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_login_fail">
                             <div class="popup_title" id="dv_error_empty" th:utext="#{validation_result_title02}">모든 항목을 빠짐 없이 입력해주시기 바랍니다</div>
@@ -203,7 +182,7 @@
                 <div class="popup_bg" id="validation_popup_bg">
                     <div class="popup_shadow" id="dv_popup_shadow_validation" >
                         <div class="top_group">
-                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                            <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_validation">
                             <div class="popup_title" id="dv_fail_all" th:utext="#{validation_title}">입력한 정보가 맞는지 확인해주세요</div>
@@ -243,7 +222,7 @@
                 <div class="popup_bg" id="qdm_exit_popup_bg">
                     <div class="popup_shadow" id="dv_popup_shadow_qdm_exit" >
                         <div class="top_group">
-                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                            <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area_short" id="dv_fixed_area_qdm_exit">
                             <div class="popup_title" th:utext="#{re_enter_title}">
@@ -281,7 +260,7 @@
                             </div>
                         </div>
                         <div class="info_area" id="dv_guide_name">
-                            <img  src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/guide_name.PNG" alt="">
+                            <img  src="/resources/img/login/guide_name.PNG" alt="">
                             <p class="Roboto" th:utext="#{helper_name_info}">에픽세븐 게임실행> 로비 왼쪽 상단에서 확인</p>
                         </div>
                         <div class="info_area" id="dv_guide_id">
@@ -300,7 +279,7 @@
             <div class="page_area">
                 <!-- 네트워크 체크 -->
                 <div class="popup_title_network">
-                    <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/waitingroom_network_pop_02.png" alt="">
+                    <img src="/resources/img/login/waitingroom_network_pop_02.png" alt="">
                     <p th:utext="#{network_title}"> 네트워크 연결 상태를 확인 중입니다</p>
                 </div>
                 <div class="popup_subtitle">
@@ -326,7 +305,7 @@
                 <div class="popup_bg">
                     <div class="popup_shadow" id="dv_popup_shadow_network" >
                         <div class="top_group">
-                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/waiting/waitingroom_network_pop_01.png" alt="">
+                            <img src="/resources/img/waiting/waitingroom_network_pop_01.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_network">
                             <!-- 네트워크 체크 -->
@@ -335,7 +314,7 @@
                                     네트워크 연결 상태를 확인 중입니다
                                 </div>
                                 <div class="popup_subtitle">
-                                    <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/waiting/img_loding.png" alt="">
+                                    <img src="/resources/img/waiting/img_loding.png" alt="">
                                 </div>
                             </div>
                             <!-- 네트워크 체크 실패 -->
@@ -366,7 +345,7 @@
                 <div class="popup_bg">
                     <div class="popup_shadow" id="dv_popup_shadow_cookie" >
                         <div class="top_group">
-                            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/login_confirm_bg2.png" alt="">
+                            <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_cookie">
                             <div class="popup_title" th:utext="#{cookie_fail_title}">
@@ -392,7 +371,7 @@
     <!-- 화면 지원안함 -->
     <div id="dv_NotSupported">
         <div class="NotSupported">
-            <img id="Oops_item_img" src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg2.png" alt="">
+            <img id="Oops_item_img" src="/resources/img/login/notsupported_bg2.png" alt="">
             <div class="Oops_textbox">
                 <div class="Oops_title">Oops!</div>
                 <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}"> 에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>
@@ -400,7 +379,7 @@
             </div>
         </div>
         <div class="NotSupported_large">
-            <img src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/img/login/notsupported_bg4.png" alt="">
+            <img src="/resources/img/login/notsupported_bg4.png" alt="">
             <div class="Oops_textbox">
                 <div class="Oops_title">Oops!</div>
                 <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}">에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>디바이스를 세로로 회전해 주세요.</mark> </div>
@@ -446,95 +425,16 @@
 <div class="test_box" id="dv_Testbox" style="display: none"></div>
 
 <div class="test_alert" id="dv_test_alert" th:utext="#{test_txt_login}"></div>
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ none CDN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
-<!--<script type="text/javascript" th:src="@{/js/common/browser_navigator_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/common/debug_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/common/device_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/common/time_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/common/encrypt_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/common/cookie_helper.js}"></script>-->
-<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
-<!--<script type="text/javascript" th:src="@{/js/login/cookie_control.js}"></script>-->
-
-<!--<script type="text/javascript" th:src="@{/js/common/location_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/login/ui.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/login/main.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/login/time_control_helper.js}"></script>-->
-
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST (none CDN) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<!--<script type="text/javascript" th:src="@{/test/js/common/browser_navigator_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/common/debug_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/common/device_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/common/time_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/common/encrypt_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/common/cookie_helper.js}"></script>-->
-<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/test/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
-<!--<script type="text/javascript" th:src="@{/test/js/login/cookie_control.js}"></script>-->
-
-<!--<script type="text/javascript" th:src="@{/test/js/common/location_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/login/ui.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/login/main.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/test/js/login/time_control_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/js/collect.js}"></script>-->
-
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ QA (none CDN) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<!--<script type="text/javascript" th:src="@{/live/js/common/browser_navigator_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/common/debug_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/common/device_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/common/time_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/common/encrypt_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/common/cookie_helper.js}"></script>-->
-<!--&lt;!&ndash;<script type="text/javascript" th:src="@{/live/js/common/cookie_helper.nan.js}"></script>&ndash;&gt;-->
-<!--<script type="text/javascript" th:src="@{/live/js/login/cookie_control.js}"></script>-->
-
-<!--<script type="text/javascript" th:src="@{/live/js/common/location_helper.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/login/ui.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/login/main.js}"></script>-->
-<!--<script type="text/javascript" th:src="@{/live/js/login/time_control_helper.js}"></script>-->
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TEST ( CDN ) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/browser_navigator_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/debug_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/device_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/time_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/encrypt_helper.nan.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/cookie_helper.nan.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/cookie_control.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/common/location_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/ui.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/main.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/test/js/login/time_control_helper.js"></script>-->
-
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 개발 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/browser_navigator_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/debug_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/device_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/time_helper.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/encrypt_helper.nan.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/common/cookie_helper.nan.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/cookie_control.js"></script>-->
-
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/ui.js"></script>-->
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/main.js"></script>-->
-
-<!--<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/js/login/time_control_helper.js"></script>-->
-
-<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 라이브 버전 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/browser_navigator_helper.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/debug_helper.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/device_helper.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/time_helper.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/encrypt_helper.nan.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/cookie_helper.nan.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/cookie_control.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/common/location_helper.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/ui.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/main.js"></script>
-<script  type="text/javascript"src="https://d1y3u63qhvnkae.cloudfront.net/src/main/resources/static/live/js/login/time_control_helper.js"></script>
+ 
+<!-- <script  type="text/javascript" src="/resources/js/common/browser_navigator_helper.js"></script> -->
+<script  type="text/javascript" src="/resources/js/common/debug_helper.js"></script>
+<!-- <script  type="text/javascript" src="/resources/js/common/device_helper.js"></script> -->
+<!-- <script  type="text/javascript" src="/resources/js/common/time_helper.js"></script> -->
+<script  type="text/javascript" src="/resources/js/common/encrypt_helper.nan.js"></script>
+<script  type="text/javascript" src="/resources/js/common/cookie_helper.nan.js"></script>
+<script  type="text/javascript" src="/resources/js/login/cookie_control.js"></script>
+<!-- <script  type="text/javascript" src="/resources/js/common/location_helper.js"></script> -->
+<script  type="text/javascript" src="/resources/js/login/ui.js"></script>
+<script  type="text/javascript" src="/resources/js/login/main.js"></script>
+<!-- <script  type="text/javascript" src="/resources/js/login/time_control_helper.js"></script> -->
 </body>

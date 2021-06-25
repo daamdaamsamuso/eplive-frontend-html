@@ -27,7 +27,11 @@ function existParam(sname){
             return true;
         }
     }
-    return false;
+    
+    //디버그 모드 계속 유지...
+    return true;
+    
+    //return false;
 }
 
 function Console_Log(msg){
