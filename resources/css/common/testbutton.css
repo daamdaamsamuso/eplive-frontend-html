@@ -1,0 +1,26 @@
+.test{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    text-align: center;
+    font-size: 13px;
+    color: #ffffff;
+  
+    width: auto;
+    height:auto;
+  
+    background-color: rgba(0,0,0,0);
+}    
+.test button{
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+}              
+.statebutton button{
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 13px;
+}

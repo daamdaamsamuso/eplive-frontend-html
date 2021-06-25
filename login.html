@@ -34,7 +34,8 @@
 </head>
 
 <body id="body_main" >
-<span id="div_is_end" style="display: none" th:text="${isEnd}"/>
+<span id="div_is_end" style="display: none" ></span>
+
 <div class="app" >
     <div id="dv_Supported">
         <!-- 정보입력 페이지 -->
@@ -46,10 +47,10 @@
                     <img id="main_area_img_title"  class="img_title" src="/resources/img/login/main_login_bg_03.png" alt="">
                     <div class="header_top" id="dv_top_timer">
                         <div class="header_txt  Noto" id="header_timer" >
-                            <p id="p_title_countdown" th:utext="#{top_timer_title01}" style="display:none">생방송까지 남은시간</p>
-                            <p id="p_title_play" th:utext="#{top_timer_title02}" style="display:none" >생방송까지 남은시간</p>
+                            <p id="p_title_countdown" style="display:none">생방송까지 남은 시간</p>
+                            <p id="p_title_play" style="display:none" >현재 퀴즈가 진행중입니다.</p>
                         </div>
-                        <div class="header_time Noto" id="p_timer_countdown">--:--</div>
+                        <div class="header_time Noto" id="p_timer_countdown">00:00</div>
                     </div>
                     <div class="login_area" id="dv_login_area">
                         <div class="login_group">
@@ -59,35 +60,33 @@
                                 <div class="open">
                                     <div class="input_member_bg">
                                         <div class="input_member">
-                                            <div class="txt_title dream" id="dv_open_login_title" th:utext="#{login_title_open}">
-                                                퀴즈 참가를 위해<br>
-                                                에픽세븐 계정 정보를 입력하세요
+                                            <div class="txt_title dream" id="dv_open_login_title">
+                                                <p class="kr">퀴즈에 참가하기 위해<br>에픽세븐 계정 정보를 입력하세요.</p>
                                             </div>
-                                            <form id="form_login" th:action="@{/main/login}" th:object="${memberForm}" method="post" onsubmit="loginFormSubmit()">
+                                            <form id="form_login" onsubmit="loginFormSubmit()">
                                                 <fieldset>
                                                     <div class="input_group01">
                                                         <div class="input_server_name">
-                                                            <select name="server_name" id="select_server_name" th:field="*{server_name}">
-                                                                <option value="kr" th:utext="#{txt_server_kr}">한국</option>
-                                                                <option value="asia" th:utext="#{txt_server_asia}">아시아</option>
-                                                                <option value="global" th:utext="#{txt_server_global}">글 로벌</option>
-                                                                <option value="eu" th:utext="#{txt_server_eu}">유럽</option>
+                                                            <select name="server_name" id="select_server_name">
+                                                                <option value="kr" >한국</option>
+                                                                <option value="asia">아시아</option>
+                                                                <option value="global">글로벌</option>
+                                                                <option value="eu">유럽</option>
                                                             </select>
                                                         </div>
                                                         <div class="input_name">
-                                                            <input type="text" name="input_name" id="input_name" th:field="*{nick_name}" th:placeholder="#{txt_name}" placeholder="닉네임" maxlength="12" onfocus="onFocusInput()" onblur="onBlurInput()" onkeypress="onNameCheck()" >
+                                                            <input type="text" name="input_name" id="input_name" placeholder="닉네임" maxlength="12" onfocus="onFocusInput()" onblur="onBlurInput()" onkeypress="onNameCheck()" >
                                                         </div>
                                                     </div>
                                                     <div class="input_group02" >
                                                         <div class="input_num">
-                                                            <input type="number" inputmode="numeric" pattern="[0-9]*" name="input_number" id="input_number" onfocus="onFocusInput()" onblur="onBlurInput()" th:field="*{member_no}" th:placeholder="#{txt_number}" placeholder="회원번호" onkeydown="checkOnKeyDown(this)" onkeyup="checkOnKeyUp(this,19)" >
+                                                            <input type="number" inputmode="numeric" pattern="[0-9]*" name="input_number" id="input_number" onfocus="onFocusInput()" onblur="onBlurInput()" placeholder="회원번호" onkeydown="checkOnKeyDown(this)" onkeyup="checkOnKeyUp(this,19)" >
                                                         </div>
                                                     </div>
                                                 </fieldset>
                                             </form>
                                             <div class="helper" >
-                                                <p id="dv_input_helper" onclick="gtag('event', '정보확인방법', {'event_category' : '참가정보입력', 'event_label' : '정보확인방법', 'event_callback' : onHelperLogin()});" th:utext="#{login_title_helper}">닉네임, 회원번호 확인방법</p>
-                                                <!-- <p id="dv_input_helper" onclick="onHelperLogin()" th:utext="#{login_title_helper}">닉네임, 회원번호 확인방법</p> -->
+                                                <p id="dv_input_helper" onclick="onHelperLogin()">닉네임, 회원번호 확인 방법</p>
                                             </div>
                                         </div>
                                     </div>
@@ -97,28 +96,24 @@
                                     <div class="input_member">
                                         <div class="schedule_next">
                                             <div class="txt_area_closed">
-                                                <div class="txt_title dream" th:utext="#{exit_title}">
-                                                    언어데이터가없습니다.<br>
+                                                <div class="txt_title dream">
+                                                    에픽 라이브<br>운영 시간이 아닙니다.
                                                 </div>
-                                                <div class="txt_subtitle" th:utext="#{exit_sub}" >언어데이터가 없습니다.
+                                                <div class="txt_subtitle">아래 회차 정보를 확인하고, 다시 참여하기 바랍니다.
                                                 </div>
                                             </div>
                                             <div class="txt_table">
                                                 <table>
-                                                    <!--                                                    <tr>-->
-                                                    <!--                                                        <th th:utext="#{schedule_sub01}">다음 이벤트</th>-->
-                                                    <!--                                                        <td th:utext="#{schedule_sub01_1}">2021년 5월 2일</td>-->
-                                                    <!--                                                    </tr>-->
                                                     <tr>
-                                                        <th th:utext="#{schedule_sub02}">마지막 이벤트</th>
-                                                        <td th:utext="#{schedule_sub02_1}">2021년 5월 16일</td>
+                                                        <th>마지막 이벤트</th>
+                                                        <td>2021년 5월 30일</td>
                                                     </tr>
                                                 </table>
                                             </div>
                                         </div>
                                         <div class="schedule_none">
-                                            <div class="txt_title" th:utext="#{schedule_title03}">
-                                                The 2021 Epic Quiz has come to an end.<br>
+                                            <div class="txt_title">
+                                                2021 에픽 라이브<br>준비된 모든 이벤트가 종료되었습니다.<br>
                                             </div>
                                         </div>
                                     </div>
@@ -127,14 +122,12 @@
                         </div>
                         <div class="open">
                             <div class="next_btn" >
-                                <button id="btn_validation" onclick="checkValidation_gtag()" th:utext="#{txt_next}">다음</button>
-                                <!--<button id="btn_validation" onclick="checkValidation()" th:utext="#{txt_next}">다음</button>-->
+                                <button id="btn_validation" onclick="checkValidation()">다음</button>
                             </div>
                         </div>
                         <div class="closed">
                             <div class="next_btn" >
-                                <button onclick="gtag('event', '퀴즈시간아님페스티벌메인으로', {'event_category' : '진행중및종료후접속', 'event_label' : '퀴즈시간아님페스티벌메인으로', 'event_callback' : goToYoutubeLiveUrl()});" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button>
-                                <!-- <button th:utext="#{txt_livestream}">에픽페스티벌 온라인 생방송</button> -->
+                                <button>에픽 페스티벌 온라인 생방송</button>
                             </div>
                         </div>
                     </div>
@@ -151,25 +144,25 @@
                             <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_login_fail">
-                            <div class="popup_title" id="dv_error_empty" th:utext="#{validation_result_title02}">모든 항목을 빠짐 없이 입력해주시기 바랍니다</div>
-                            <div class="popup_title" id="dv_error_all" th:utext="#{validation_result_title01}">닉네임, 회원번호 입력 오류</div>
+                            <div class="popup_title" id="dv_error_empty">모든 항목을 빠짐 없이 입력해 주세요.</div>
+                            <div class="popup_title" id="dv_error_all" >닉네임, 회원 번호 입력 오류</div>
                             <div class="popup_title" id="dv_error_name">닉네임 입력 오류</div>
                             <div class="popup_title" id="dv_error_number">회원번호 입력 오류</div>
                             <div class="popup_table_error">
                                 <table>
                                     <tr>
-                                        <th th:utext="#{txt_name}">닉네임</th>
-                                        <td th:utext="#{validation_result_sub01}">공백 없이 최소2자, 최대 12자</td>
+                                        <th>닉네임</th>
+                                        <td>공백 없이 최소 2자, 최대 12자</td>
                                     </tr>
                                     <tr>
-                                        <th th:utext="#{txt_number}">회원번호</th>
-                                        <td th:utext="#{validation_result_sub02}">숫자만 9자리 이상</td>
+                                        <th>회원번호</th>
+                                        <td>숫자만 9자리 이상</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="bottom_area" id="dv_bottom_area_login_fail">
-                            <button class="btn_item01" onclick="offErrorLogin()" th:utext="#{txt_close}">닫기</button>
+                            <button class="btn_item01" onclick="offErrorLogin()">닫기</button>
                         </div>
                     </div>
                 </div>
@@ -185,32 +178,28 @@
                             <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_validation">
-                            <div class="popup_title" id="dv_fail_all" th:utext="#{validation_title}">입력한 정보가 맞는지 확인해주세요</div>
-                            <div class="popup_subtitle" th:utext="#{validation_sub}">회원 정보와 일치하지 않을 경우, 보상이 정상적으로 이루어지지 않을 수 있습니다.</div>
+                            <div class="popup_title" id="dv_fail_all">입력한 정보가 맞는지 확인해 주세요</div>
+                            <div class="popup_subtitle">회원 정보와 일치하지 않을 경우,<br>보상이 정상적으로 이루어지지 않을 수 있습니다.<br></div>
                             <div class="popup_table">
                                 <table>
                                     <tr>
-                                        <th th:utext="#{txt_server}">서버</th>
+                                        <th>서버</th>
                                         <td id="td_output_server"></td>
                                     </tr>
                                     <tr>
-                                        <th th:utext="#{txt_name}">닉네임</th>
+                                        <th>닉네임</th>
                                         <td id="td_output_name"></td>
                                     </tr>
                                     <tr>
-                                        <th th:utext="#{txt_number}">회원번호</th>
+                                        <th>회원번호</th>
                                         <td id="td_output_number"></td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="bottom_area_row" id="dv_bottom_area_validation">
-                            <button class="btn_item01" onclick="gtag('event', '입력정보확인_수정', {'event_category' : '입력정보확인', 'event_label' : '입력정보확인_수정', 'event_callback' : clearValidation()});" th:utext="#{txt_clear}">다시 입력</button>
-                            <button class="btn_item02" id="btn_confirm" type="submit" form="form_login" th:utext="#{txt_next}"
-                                    onclick="gtag('event', '입력정보확인_다음', {'event_category' : '입력정보확인', 'event_label' : '입력정보확인_다음'});">다음</button>
-
-                            <!--<button class="btn_item01" onclick="clearValidation()" th:utext="#{txt_clear}">다시 입력</button>button-->
-                            <!--<button class="btn_item02" id="btn_confirm" type="submit" form="form_login" th:utext="#{txt_next}">다음</button>-->
+                            <button class="btn_item01" onclick="clearValidation()">다시 입력</button>
+                            <button class="btn_item02" id="btn_confirm">다음</button>
                         </div>
                     </div>
                 </div>
@@ -225,20 +214,15 @@
                             <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area_short" id="dv_fixed_area_qdm_exit">
-                            <div class="popup_title" th:utext="#{re_enter_title}">
-                                에픽 라이브 퀴즈쇼에서 이탈했습니다</div>
-                            <div class="popup_subtitle" th:utext="#{re_enter_sub}">
-                                닉네임 sp_name안바뀜, 회원번호 sp_number안바뀜로
-                                현재 진행중인 문제부터 계속 참여할 수 있습니다.
-                                다시 입장하시겠습니까?
+                            <div class="popup_title">
+                                에픽 라이브 퀴즈쇼 페이지에서 이탈했습니다.</div>
+                            <div class="popup_subtitle">
+                                닉네임 <span id="sp_name">계승자님사랑해요</span>, 회원번호 <span id="sp_number">123456789</span>로<br>현재 진행중인 문제부터 계속 참여할 수 있습니다.<br>다시 입장하시겠습니까?<br>
                             </div>
                         </div>
                         <div class="bottom_area_col" id="dv_bottom_area_qdm_exit">
-                            <button class="btn_item01" onclick="gtag('event', '이탈시_재입장', {'event_category' : '퀴즈쇼이탈', 'event_label' : '이탈시_재입장', 'event_callback' : onReconnectViewOff()});" th:utext="#{re_enter_btn01}">새 회원 정보로 입장</button>
-                            <button class="btn_item02" onclick="gtag('event', '이탈시_새회원정보', {'event_category' : '퀴즈쇼이탈', 'event_label' : '이탈시_새회원정보', 'event_callback' : onPlayPage()});" th:utext="#{re_enter_btn02}">재입장</button>
-
-                            <!-- <button class="btn_item01" onclick="onReconnectViewOff()" th:utext="#{re_enter_btn01}">새 회원 정보로 입장</button> -->
-                            <!-- <button class="btn_item02" onclick="onPlayPage()" th:utext="#{re_enter_btn02}">재입장</button> -->
+                            <button class="btn_item01" onclick="onReconnectViewOff()">새 회원 정보로 입장</button>
+                            <button class="btn_item02" onclick="onPlayPage()">재입장</button>
                         </div>
                     </div>
                 </div>
@@ -252,23 +236,23 @@
                         <div class="top_group Roboto">
                             <div class="tab01" onclick="checkInfoName()">
                                 <input id="tab_name" type="radio" name="tabs" checked>
-                                <label for="tab_name" th:utext="#{helper_name}">닉네임 확인하기</label>
+                                <label for="tab_name">닉네임 확인하기</label>
                             </div>
                             <div class="tab02" onclick="checkInfoID()">
                                 <input id="tab_id" type="radio"  name="tabs">
-                                <label for="tab_id" th:utext="#{helper_number}">회원번호 확인하기</label>
+                                <label for="tab_id">회원번호 확인하기</label>
                             </div>
                         </div>
                         <div class="info_area" id="dv_guide_name">
                             <img  src="/resources/img/login/guide_name.PNG" alt="">
-                            <p class="Roboto" th:utext="#{helper_name_info}">에픽세븐 게임실행> 로비 왼쪽 상단에서 확인</p>
+                            <p class="Roboto">에픽세븐 게임 실행 > 로비 왼쪽 상단에서 확인</p>
                         </div>
                         <div class="info_area" id="dv_guide_id">
-                            <img th:src="#{helper_numbers}" alt="">
-                            <p class="Roboto" th:utext="#{helper_number_info}">옵션 > 계정설정 > 회원번호 확인 후 # 을 제외하고 작성해주세요</p>
+                            <img src="/resources/img/login/guide_number_kr.png"alt="">
+                            <p class="Roboto">옵션 > 계정 설정 > 회원번호 확인 후 #을 제외하고 작성해 주세요</p>
                         </div>
                         <div class="bottom_area" id="dv_bottom_area">
-                            <button class="btn_item01 Noto" onclick="offHelperLogin_gtag()" th:utext="#{txt_close}">닫기</button>
+                            <button class="btn_item01 Noto" onclick="offHelperLogin()">닫기</button>
                         </div>
                     </div>
                 </div>
@@ -280,7 +264,7 @@
                 <!-- 네트워크 체크 -->
                 <div class="popup_title_network">
                     <img src="/resources/img/login/waitingroom_network_pop_02.png" alt="">
-                    <p th:utext="#{network_title}"> 네트워크 연결 상태를 확인 중입니다</p>
+                    <p> 네트워크 연결 상태를 확인 중입니다.</p>
                 </div>
                 <div class="popup_subtitle">
                     <div class="sk-circle">
@@ -310,8 +294,8 @@
                         <div class="fixed_area" id="dv_fixed_area_network">
                             <!-- 네트워크 체크 -->
                             <div class="dv_checking">
-                                <div class="popup_title_network" th:utext="#{network_title}">
-                                    네트워크 연결 상태를 확인 중입니다
+                                <div class="popup_title_network">
+                                    네트워크 연결 상태를 확인 중입니다.
                                 </div>
                                 <div class="popup_subtitle">
                                     <img src="/resources/img/waiting/img_loding.png" alt="">
@@ -319,20 +303,17 @@
                             </div>
                             <!-- 네트워크 체크 실패 -->
                             <div class="dv_fail">
-                                <div class="popup_title" th:utext="#{network_fail_title}">
-                                    네트워크 연결 상태가 불안정합니다
+                                <div class="popup_title">
+                                    네트워크 연결 상태가 불안정합니다.
                                 </div>
-                                <div class="popup_subtitle" th:utext="#{network_fail_sub}">
-                                    무선 이동 통신이 원활한 환경에서 <br>
-                                    다시 접속하시기 바랍니다.<br>
-                                    회원 정보 입력 페이지로 이동합니다.<br>
+                                <div class="popup_subtitle">
+                                    무선 이동 통신이 원활한 환경에서<br>다시 접속하시기 바랍니다.<br>회원 정보 입력 페이지로 이동합니다.<br>
                                 </div>
                             </div>
                         </div>
                         <div class="bottom_area" id="dv_bottom_area_network">
                             <div class="dv_fail">
-                                <button class="btn_item01" onclick="gtag('event', '네트워크_닫기', {'event_category' : '네트워크체크', 'event_label' : '네트워크_닫기', 'event_callback' : btnNetworkCheckFailed()});" th:utext="#{txt_close}">닫기</button>
-                                <!--<button class="btn_item01" onclick="btnNetworkCheckFailed()" th:utext="#{txt_close}">닫기</button>-->
+                                <button class="btn_item01" onclick="btnNetworkCheckFailed()">닫기</button>
                             </div>
                         </div>
                     </div>
@@ -348,19 +329,15 @@
                             <img src="/resources/img/login/login_confirm_bg2.png" alt="">
                         </div>
                         <div class="fixed_area" id="dv_fixed_area_cookie">
-                            <div class="popup_title" th:utext="#{cookie_fail_title}">
-                                브라우저에서 쿠키가<br>
-                                비활성화되어 있거나 비밀 모드를<br>
-                                사용 중일 수 있습니다.<br>
+                            <div class="popup_title">
+                                브라우저에서 쿠키가<br>비활성화되어 있거나 비밀 모드를<br>사용 중일 수 있습니다.<br>
                             </div>
-                            <div class="popup_subtitle" th:utext="#{cookie_fail_sub}">
-                                에픽 라이브에 정상적으로 참여하기 위해<br>
-                                쿠키를 활성화하거나 비밀 모드를 중단한 후<br>
-                                다시 시도해 주세요.<br>
+                            <div class="popup_subtitle"></div>
+                                에픽 라이브에 정상적으로 참여하기 위해<br>쿠키를 활성화하거나 비밀 모드를 중단한 후<br>다시 시도해 주세요.<br>
                             </div>
                         </div>
                         <div class="bottom_area" id="dv_bottom_area_cookie">
-                            <button class="btn_item01" onclick="window.location.reload()" th:utext="#{txt_close}">닫기</button>
+                            <button class="btn_item01" onclick="window.location.reload()">닫기</button>
                         </div>
                     </div>
                 </div>
@@ -374,15 +351,14 @@
             <img id="Oops_item_img" src="/resources/img/login/notsupported_bg2.png" alt="">
             <div class="Oops_textbox">
                 <div class="Oops_title">Oops!</div>
-                <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}"> 에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>
-                    디바이스를 세로로 회전해 주세요.</mark> </div>
+                <div class="Oops_subtitle"> <mark> 에픽 라이브는 세로 화면 보기에 최적화되어 있습니다.<br>디바이스를 세로로 회전해 주세요.</mark> </div>
             </div>
         </div>
         <div class="NotSupported_large">
             <img src="/resources/img/login/notsupported_bg4.png" alt="">
             <div class="Oops_textbox">
                 <div class="Oops_title">Oops!</div>
-                <div class="Oops_subtitle"> <mark th:utext="#{notsurpoort_sub}">에픽 라이브는 세로 화면에 최적화되어 있습니다. <br>디바이스를 세로로 회전해 주세요.</mark> </div>
+                <div class="Oops_subtitle"> <mark>에픽 라이브는 세로 화면 보기에 최적화되어 있습니다.<br>디바이스를 세로로 회전해 주세요.</mark> </div>
             </div>
         </div>
     </div>
@@ -424,7 +400,7 @@
 
 <div class="test_box" id="dv_Testbox" style="display: none"></div>
 
-<div class="test_alert" id="dv_test_alert" th:utext="#{test_txt_login}"></div>
+<div class="test_alert" id="dv_test_alert" >에픽라이브 테스트 페이지</div>
  
 <!-- <script  type="text/javascript" src="/resources/js/common/browser_navigator_helper.js"></script> -->
 <script  type="text/javascript" src="/resources/js/common/debug_helper.js"></script>

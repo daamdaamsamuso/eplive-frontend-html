@@ -7,7 +7,7 @@
                 <div class="main_area">
                     <img class="img_item" id="dv_img_item" src="../resources/img/qdm/result_header_img_title.png" alt="">
                     <div class="score_area">
-                        <div class="header_title"> <p th:utext="#{result_txt}">최종점수</p></div>
+                        <div class="header_title"> <p>최종 점수</p></div>
                         <div class="header_meta">
                             <img id="score_my" class="score_10" src="../resources/img/qdm/result_score_0.png" alt="">
                             <img class="score_dash" src="../resources/img/qdm/result_score_dash.png" alt="">
@@ -21,24 +21,22 @@
                                 <div class="input_member">
                                     <div class="schedule_next">
                                         <div class="txt_title">
-                                            <p class="dream" id="p_score_txt_pass" th:utext="#{result_title}">데이터가 없습니다</p>
-                                            <p class="dream" id="p_score_txt_fail" th:utext="#{result_score}">데이터가없습니다</p>
+                                            <p class="dream" id="p_score_txt_pass">축하합니다!<br>모든 문제를 맞추셨어요.<br></p>
+                                            <p class="dream" id="p_score_txt_fail">총 <span id="p_score_txt"></span>개를 맞추셨어요.</p>
                                         </div>
                                         <div class="txt_meta">
-                                            <p id="p_score_txt_meta_pass" th:utext="#{result_sub}">데이터가 없습니다</p>
-                                            <p id="p_score_txt_meta_fail" th:utext="#{result_score_sub}">데이터가 없습니다</p>
+                                            <p id="p_score_txt_meta_pass"><span class="txt_bold">정답수 별 지급 하늘석</span><br>정답 1개당 : 100개<br>10개 : 1,000 <span>+77,777/N(만점자 수)</span><br></p>
+                                            <p id="p_score_txt_meta_fail"><span class="txt_bold">정답수 별 지급 하늘석</span><br>정답 1개당 : 100개<br>10개 : 1,000 <span>+77,777/N(만점자 수)</span><br></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="schedule_btn" >
-                                <button id="btn_community_link_area" onclick="gtag('event', '다음회차정보', {'event_category' : '퀴즈결과', 'event_label' : '다음회차정보', 'event_callback' : onInfoSchedule()});" th:utext="#{txt_schedule}">다음 회차 정보<img src="../resources/img/qdm/community_link_area_icon.png" alt=""> </button>
-                                <!--<button id="btn_community_link_area" onclick="onInfoSchedule()" th:utext="#{txt_schedule}">다음 회차 정보<img src="../resources/img/qdm/community_link_area_icon.png" alt=""> </button>-->
+                                <button id="btn_community_link_area" onclick="onInfoSchedule()">다음 회차 정보<br><img src="../resources/img/qdm/community_link_area_icon.png" alt=""> </button>
                             </div>
                         </div>
                         <div class="festival_link_area" >
-                            <button id="btn_festival_link_area" onclick="gtag('event', '온라인생방송보기', {'event_category' : '퀴즈결과', 'event_label' : '온라인생방송보기', 'event_callback' : goToYoutubeLiveUrl()});" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button>
-                            <!-- <button id="btn_festival_link_area" th:utext="#{txt_livestream}" >에픽페스티벌 온라인 생방송</button> -->
+                            <button id="btn_festival_link_area" onclick="goToYoutubeLiveUrl()">에픽 페스티벌 온라인 생방송</button>
                         </div>
                     </div>
                 </div>
