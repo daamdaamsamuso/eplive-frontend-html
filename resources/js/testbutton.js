@@ -118,29 +118,47 @@ function demoButton(idx)
         case 9:
             //O X 
             onQDM();
-            var t1 = document.getElementById("t1_01_q7")
+            var t1 = document.getElementById("t1_01_q7");
+            var t2 = document.getElementById("t1_02_q7");
             t1.checked = false;
+            t2.checked = false;
             setDisplayInArray(1,7);
             break;
         case 10:
             //3지선다
             onQDM();
             var t1 = document.getElementById("t2_01_q1");
+            var t2 = document.getElementById("t2_02_q1");
+            var t3 = document.getElementById("t2_03_q1");
             t1.checked = false;
+            t2.checked = false;
+            t3.checked = false;
             setDisplayInArray(1,1);
             break;
         case 11:
             //4지선다
             onQDM();
             var t1 = document.getElementById("t3_01_q2");
+            var t2 = document.getElementById("t3_02_q2");
+            var t3 = document.getElementById("t3_03_q2");
+            var t4 = document.getElementById("t3_04_q2");
             t1.checked = false;
+            t2.checked = false;
+            t3.checked = false;
+            t4.checked = false;
             setDisplayInArray(1,2);
             break;
         case 12:
             //타임아웃
             onQDM();
             var t1 = document.getElementById("t3_01_q2");
+            var t2 = document.getElementById("t3_02_q2");
+            var t3 = document.getElementById("t3_03_q2");
+            var t4 = document.getElementById("t3_04_q2");
             t1.checked = false;
+            t2.checked = false;
+            t3.checked = false;
+            t4.checked = false;
             setDisplayInArray(1,2);
             setDisplayInArray(6666,2);
             break;
