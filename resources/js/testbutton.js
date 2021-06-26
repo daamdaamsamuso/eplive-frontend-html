@@ -170,11 +170,13 @@ function demoButton(idx)
         case 14:
             //모두 정답
             onResult();
+            document.getElementById("score_my").src= "../resources/img/qdm/result_score_10.png";
             onPass();
             break;
         case 15:
             //스코어 
             onResult();
+            document.getElementById("score_my").src= "../resources/img/qdm/result_score_7.png";
             onFailQdm(7);
             break;
         case 16:
