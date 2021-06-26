@@ -118,22 +118,31 @@ function demoButton(idx)
         case 9:
             //O X 
             onQDM();
+            var t1 = document.getElementById("t1_01_q7")
+            t1.checked = false;
             setDisplayInArray(1,7);
             break;
         case 10:
             //3지선다
             onQDM();
-            setDisplayInArray(1,1)
+            var t1 = document.getElementById("t2_01_q1");
+            t1.checked = false;
+            setDisplayInArray(1,1);
             break;
         case 11:
             //4지선다
             onQDM();
-            setDisplayInArray(1,2)
+            var t1 = document.getElementById("t3_01_q2");
+            t1.checked = false;
+            setDisplayInArray(1,2);
             break;
         case 12:
             //타임아웃
             onQDM();
-            setDisplayInArray(6666,2)
+            var t1 = document.getElementById("t3_01_q2");
+            t1.checked = false;
+            setDisplayInArray(1,2);
+            setDisplayInArray(6666,2);
             break;
         case 13:
             //퀴즈 아웃트로
