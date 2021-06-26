@@ -482,30 +482,28 @@
     </div>
 </div>
 <div class="test_box dream" id="dv_Testbox" style="display:none"></div>
+<div class="test_alert" id="dv_test_alert" >에픽라이브 테스트 페이지</div>
+
 <div class="test">
     <button id="dv_testbutton" onclick="showButton()">test_on</button>
     <div class="statebutton" id="dv_buttonlist1">
-        <button onclick="onWait()">대기화면</button>
-        <button onclick="onQDM()">퀴즈화면</button>
-        <button onclick="onResult()">결과화면</button>
         <button onclick="hideButton()">test_off</button>
+        <button onclick="demoButton(7)">가이드</button>
+        <button onclick="demoButton(8)">intro</button>
+        <button onclick="demoButton(9)">O X</button>
     </div>
     <div class="statebutton" id="dv_buttonlist2">
-        <button onclick="setDisplayInArray(1,0)">intro</button>
-        <button onclick="setDisplayInArray(1,7)">tpye01</button>
-        <button onclick="setDisplayInArray(1,1)">tpye02</button>
-        <button onclick="setDisplayInArray(1,2)">tpye03</button>
-        <button onclick="setDisplayInArray(1,11)">outro</button>
-        <button onclick="setDisplayInArray(6666)">timeout</button>
+        <button onclick="demoButton(10)">3지선다</button>
+        <button onclick="demoButton(11)">4지선다</button>
+        <button onclick="demoButton(12)">timeout</button>
+        <button onclick="demoButton(13)">outro</button>
     </div>
     <div class="statebutton" id="dv_buttonlist3">
-        <button onclick="onPass()">모두정답</button>
-        <button onclick="onFailQdm(7)">스코어</button>
+        <button onclick="demoButton(14)">모두정답</button>
+        <button onclick="demoButton(15)">스코어</button>
     </div>
 </div>
 
-<div class="test_alert" id="dv_test_alert" >에픽라이브 테스트 페이지</div>
-<div class = ""></div>
 <!--<div class="test_box2"></div>-->
 
 <!--<div class="debugger__div" id="dv_debugger">-->
