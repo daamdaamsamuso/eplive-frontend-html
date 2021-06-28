@@ -25,8 +25,9 @@ function hideButton() {
 
 function demoButton(idx)
 {
-    // 유튜브 관리
-    if( idx != 7)
+  
+    // 유튜브 관리 / playquiz Test이벤트 중에 테스트페이지 설정만 제외하고..
+    if( idx > 7 && idx != 16)
         stopYoutubeAndHide();
 
     switch(idx)
