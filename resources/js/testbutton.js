@@ -25,6 +25,10 @@ function hideButton() {
 
 function demoButton(idx)
 {
+    // 유튜브 관리
+    if( idx != 7)
+        stopYoutubeAndHide();
+
     switch(idx)
     {
         case 0:
@@ -110,6 +114,7 @@ function demoButton(idx)
             //가이드  - 유튜브
             onWait();
             waitMov();
+            initYoutubePlayer();
             break;
         case 17:
             //가이드 - 이미지
