@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         demoButton(0);
     }else if(window.location.pathname == "/playquiz.html")
     {
-        onWait();
+        demoButton(7);
     }
     
 });
@@ -107,8 +107,14 @@ function demoButton(idx)
             break;
 
         case 7:
-            //가이드 
+            //가이드  - 유튜브
             onWait();
+            waitMov();
+            break;
+        case 17:
+            //가이드 - 이미지
+            onWait();
+            waitImg();
             break;
         case 8:
             //퀴즈인트로 
